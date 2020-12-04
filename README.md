@@ -1,6 +1,6 @@
-# simple-cloud-stream-rabbitmq
+# reactive-world-cities
 
-#### A simple Spring Boot application using Spring Boot and Cloud Stream with RabbitMQ Message Broker.
+#### A simple reactive Spring Boot web application.
 
 **Prerequisites:**
 

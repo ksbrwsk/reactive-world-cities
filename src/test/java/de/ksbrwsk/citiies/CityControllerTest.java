@@ -11,6 +11,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @Log4j2
 class CityControllerTest {
+
     @Autowired
     CityController cityController;
 

@@ -44,10 +44,12 @@ public class DatabaseInitializr {
                 .map(this::createCity)
                 .collect(toList());
 
+        // TODO: Eliminate blocking call
         this.cityRepository
                 .deleteAll()
                 .thenMany(this.cityRepository.saveAll(cities))
                 .then(this.cityRepository.count())
+                .onErrorMap(ex -> new RuntimeException("Error persisting data", ex))
                 .block();
         log.info("Data successfully persisted");
 

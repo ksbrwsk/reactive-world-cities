@@ -12,7 +12,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 @Log4j2
-@RequiredArgsConstructor
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 class CityControllerStreamTest {
 
@@ -36,6 +35,6 @@ class CityControllerStreamTest {
                 .limitRequest(10)
                 .blockLast();
         assertNotNull(city);
-        log.info("Last City: {}", city);
+        log.info("last city: {}", city);
     }
 }
