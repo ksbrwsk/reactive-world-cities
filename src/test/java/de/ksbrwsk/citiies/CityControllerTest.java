@@ -1,6 +1,7 @@
 package de.ksbrwsk.citiies;
 
 import lombok.extern.log4j.Log4j2;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,13 +11,14 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @Log4j2
-class CityControllerTest {
+class CityControllerTest extends AbstractIntegrationTest {
 
     @Autowired
     CityController cityController;
 
     @Test
-    void allCities() {
+    @DisplayName("should load all cities")
+    void should_load_all_cities() {
         WebTestClient webTestClient = WebTestClient.bindToController(cityController).build();
 
         webTestClient
@@ -28,7 +30,8 @@ class CityControllerTest {
     }
 
     @Test
-    void byName() {
+    @DisplayName("should load cities by name")
+    void should_load_cities_by_name() {
         WebTestClient webTestClient = WebTestClient.bindToController(cityController).build();
 
         webTestClient
@@ -43,7 +46,8 @@ class CityControllerTest {
     }
 
     @Test
-    void byCountry() {
+    @DisplayName("should load cities by country")
+    void should_load_cities_by_country() {
         WebTestClient webTestClient = WebTestClient.bindToController(cityController).build();
 
         webTestClient
@@ -57,8 +61,8 @@ class CityControllerTest {
                 .isEqualTo("Germany");
     }
 
-    @Test
-    void bySubcountry() {
+    @Test@DisplayName("should load cities by subcountry")
+    void should_load_cities_by_subcountry() {
         WebTestClient webTestClient = WebTestClient.bindToController(cityController).build();
 
         webTestClient

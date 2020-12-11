@@ -1,7 +1,7 @@
 package de.ksbrwsk.citiies;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,13 +13,14 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 
 @Log4j2
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-class CityControllerStreamTest {
+class CityControllerStreamTest extends AbstractIntegrationTest {
 
     @Autowired
     CityStreamController cityController;
 
     @Test
-    void stream() {
+    @DisplayName("should stream cities")
+    void should_stream_cities() {
         WebTestClient webTestClient = WebTestClient
                 .bindToController(cityController).build();
 

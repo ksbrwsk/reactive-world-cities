@@ -6,7 +6,7 @@
 
 * Java 15
 * [Apache Maven](https:http://maven.apache.org/)
-* [PostgreSQL](https://www.postgresql.org/) Database
+* [Docker] (https://www.docker.com/) 
 
 You can download PostgreSQL on the above website, or if you have Docker installed,
 grab an image from Docker Hub and run the image. 
@@ -17,10 +17,10 @@ docker run --name postgresql -e POSTGRESQL_PASSWORD=password123 -e POSTGRES_DB=s
 
 ## How to build and run
 
-Assuming Java, Maven and PostgreSQL are already installed on your local machine, type
+Assuming Java, Maven and Docker are already installed on your local machine, type
 
 ```bash
-mvn clean package
+mvn package
 mvn spring-boot:run
 ```
 
