@@ -6,7 +6,7 @@
 
 * Java 15
 * [Apache Maven](https:http://maven.apache.org/)
-* [Docker] (https://www.docker.com/) 
+* [Docker](https://www.docker.com/) 
 
 You can download PostgreSQL on the above website, or if you have Docker installed,
 grab an image from Docker Hub and run the image. 
