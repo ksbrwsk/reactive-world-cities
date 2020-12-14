@@ -17,7 +17,7 @@ class CityRepositoryTest extends AbstractIntegrationTest {
 
     @Test
     @DisplayName("should load cities by name")
-    void qshould_load_cities_by_name() {
+    void should_load_cities_by_name() {
         Flux<City> cityFlux = this.worldCityRepository
                 .findAllByName("Remscheid")
                 .limitRequest(1);
