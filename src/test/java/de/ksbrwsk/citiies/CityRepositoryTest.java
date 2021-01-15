@@ -19,11 +19,10 @@ class CityRepositoryTest extends AbstractIntegrationTest {
     @DisplayName("should load cities by name")
     void should_load_cities_by_name() {
         Flux<City> cityFlux = this.worldCityRepository
-                .findAllByName("Remscheid")
-                .limitRequest(1);
+                .findAllByName("Sharjah");
         StepVerifier
                 .create(cityFlux)
-                .expectNextMatches(city -> city.getName().equalsIgnoreCase("remscheid"))
+                .expectNextMatches(city -> city.getName().equalsIgnoreCase("Sharjah"))
                 .verifyComplete();
     }
 
