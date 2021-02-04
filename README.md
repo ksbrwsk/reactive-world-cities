@@ -2,6 +2,8 @@
 
 #### A simple reactive Spring Boot web application.
 
+![Java CI with Maven](https://github.com/ksbrwsk/reactive-world-cities/workflows/Java%20CI%20with%20Maven/badge.svg)
+
 **Prerequisites:**
 
 * Java 15

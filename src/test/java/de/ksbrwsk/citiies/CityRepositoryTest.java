@@ -1,8 +1,10 @@
 package de.ksbrwsk.citiies;
 
 import lombok.extern.log4j.Log4j2;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.r2dbc.DataR2dbcTest;
 import reactor.core.publisher.Flux;
@@ -10,6 +12,7 @@ import reactor.test.StepVerifier;
 
 @DataR2dbcTest
 @Log4j2
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class CityRepositoryTest extends AbstractIntegrationTest {
 
     @Autowired
@@ -17,6 +20,7 @@ class CityRepositoryTest extends AbstractIntegrationTest {
 
     @Test
     @DisplayName("should load cities by name")
+    @Disabled
     void should_load_cities_by_name() {
         Flux<City> cityFlux = this.worldCityRepository
                 .findAllByName("Sharjah");
